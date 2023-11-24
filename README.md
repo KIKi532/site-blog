@@ -40,9 +40,22 @@ Django-Blog автоматично розділяє великі списки с
     ```
 
 3. **Підключення до бази даних:**
+   
 У файлі settings.py вашого Django проекту, визначте параметри підключення до бази даних. Замініть 'your_database_name', 'your_database_user', та 'your_database_password' на ваші конкретні значення для імені бази даних, користувача та пароля відповідно.
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
   
-4. **Запуск міграцій, заповнення бази даних фікстурами та запуск сервера**
+5. **Запуск міграцій, заповнення бази даних фікстурами та запуск сервера**
     ```bash
     ./manage.py migrate
     ./manage.py loaddata <path_to_fixture_files>
